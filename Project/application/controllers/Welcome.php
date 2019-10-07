@@ -2,6 +2,12 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Welcome extends CI_Controller {
+	public function __construct(){
+	    parent::__construct();
+	    $this->load->database('drugman');
+	    $this->load->helper('url');
+	    $this->load->model('InventoryModel');
+	}
 
 	/**
 	 * Index Page for this controller.
@@ -20,6 +26,8 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		
+	    $result['data']=$this->InventoryModel->displayrecords();
+		$this->load->view('InventoryView',$result);
 	}
 }
