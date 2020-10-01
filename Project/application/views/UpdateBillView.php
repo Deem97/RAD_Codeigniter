@@ -23,6 +23,7 @@ foreach($result as $row){
 <table width="600" border="1" cellspacing="5" cellpadding="5">
         <tr>
             <td width='230'>Item ID</td>
+	    <td width='230'>Item Name</td>
             <td width='329'>Quantity</td>
         </tr>
 
